@@ -9,4 +9,6 @@ This project focused on interpretation of Logistic regression
 4. Write down final model
 5. Model interpretation 
 
+#### for more detail please read Report file
+
 🐣 
