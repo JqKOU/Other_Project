@@ -1,6 +1,6 @@
 
 #### Overview
-This project focused on interpretation of Logistic regression
+This project focused on interpretation the results of Logistic regression
 
 #### Steps
 1. Explore the data set
