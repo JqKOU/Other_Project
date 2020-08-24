@@ -9,5 +9,4 @@ This project used Expectation-Maximization (EM) method to estimate parameters of
 This project also forecasted future events using estimated parameters.
 
 For more detail, please read **Report** file. 
-
 🪁
