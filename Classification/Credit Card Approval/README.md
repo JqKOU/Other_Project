@@ -8,4 +8,6 @@ This project focused on classification and prediction. The purpose of the analys
 4. train logistic regression model with Lasso penalty, determine tuning parameter and cut-off point, apply to test set.
 5. Compare model from 3 and 4 and make decision
 
-#### For more detail, please read the Report file 🐣
+#### For more detail, please read the Report file 
+
+🪁
