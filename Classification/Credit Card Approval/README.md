@@ -9,5 +9,4 @@ This project focused on classification and prediction. The purpose of the analys
 5. Compare model from 3 and 4 and make decision
 
 #### For more detail, please read the Report file 
-
 🪁
