@@ -4,9 +4,10 @@ This project focused on classification and prediction. The purpose of the analys
 #### Steps
 1. remove obs with missing value, convert categorical variable to factor in R
 2. make plots to explore the dataset
-3. train logistic regression model use 10 fold validation, plot ROC calculate AUC, apply the rule to test set to calculate the accuracy
-4. train logistic regression model with Lasso penalty, determine tuning parameter and cut-off point, apply to test set.
+3. train **logistic regression** model use 10 fold validation, plot ROC calculate AUC, apply the rule to test set to calculate the accuracy
+4. train logistic regression model with **Lasso penalty**, determine tuning parameter and cut-off point, apply to test set.
 5. Compare model from 3 and 4 and make decision
 
 #### For more detail, please read the Report file 
+
 🪁
