@@ -1,4 +1,4 @@
-## file: lending club data preprocessing¶
+## file: data_preprocessing_LendingClub.ipynb
 
 ### Purpose¶
 Preparing lending club data for binary class classification
