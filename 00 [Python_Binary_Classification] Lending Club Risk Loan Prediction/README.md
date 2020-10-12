@@ -1,4 +1,15 @@
-# ## file name: 0 data preprocessing LendingClub.ipynb
+### Abstract 
+
+This project used dataset obtained from Lending Club. Since loans in Lending Club are either 36 or 60 months, and in order to have a good number of finished loans, loan data issued from 2011 to 2014 were downloaded. More specifically, the target feature loan_status has the following distribution:
+
+Fully Paid 193878; Charged Off 41748; Current  1; Late (31-120 days) 1; Default 1
+
+This project will only keep loans with Fully Paid and Charged Off status. And the purpose is to build a classifier to predict whether a loan will be charged off before issuing a loan. The final selected model is Logistic regression with Lasso penalty C=1 and cut-off threshold 0.3, the test performance are: F1:  68.17, Precision: 85.68, Recall: 56.60, AUC: 76.57, Accuracy: 85.84. 
+
+According to feature importance based on scale of coefficients, people with high last_fico_range_high and annual_inc are more likely to fully pay their loans, applicants with debt_settlement_flag Y are more likely to charge off loans.
+
+
+### file name: 0 data preprocessing LendingClub.ipynb
 
 ### Purpose¶
 Preparing lending club data for binary class classification
@@ -41,6 +52,7 @@ Since imbalance ratio at 8:2 is not very severe, this notebook is modeled on the
 #### outcome 
 After all these steps, the final model is Logistic Regression with L1(Lasso) penalty C=1 and threshold 0.3. The best training performance are: F1: 69.04, Precision: 76.61, Recall: 62.83, AUC: 78.78, Accuracy: 87.84. The testing performance are: F1: 68.43, Precision: 75.75, Recall: 62.39, AUC: 78.46, Accuracy: 87.63. There is no big disparency between training and testing performance, which means overfitting is prohibited. 
 
+
 ## file name: 2 Modeling on balanced dataset.ipynb
 
 ### Overview
@@ -52,6 +64,6 @@ This notebook focused on training model on under-sampled and SMOTE over-sampled 
 
  * The new testing performance are: F1:  68.17, Precision: 85.68, Recall: 56.60, AUC: 76.57, Accuracy: 85.84.
  
-According to feature importance, people with high last_fico_range_high and annual_inc are less likely to default on loans, applicants with debt_settlement_flag Y are more likely to default on loans which is same to feature importance on imbalanced dataset. 
+According to feature importance, people with high last_fico_range_high and annual_inc are less likely to charge off on loans, applicants with debt_settlement_flag Y are more likely to charge off on loans which is same to feature importance on imbalanced dataset. 
 
 All in all, models on balanced dataset performed similar to models on original dataset. Therefore, it is more efficient to model on the original imbalanced dataset for the Lending Club default loan prediction problem. 
