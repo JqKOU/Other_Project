@@ -2,11 +2,7 @@
 
 This project used dataset obtained from Lending Club. Since loans in Lending Club are either 36 or 60 months, and in order to have a good number of finished loans, loan data issued from 2011 to 2014 were downloaded. More specifically, the target feature loan_status has the following distribution:
 
-Fully Paid            193878
-Charged Off            41748
-Current                    1
-Late (31-120 days)         1
-Default                    1
+Fully Paid 193878; Charged Off 41748; Current  1; Late (31-120 days) 1; Default 1
 
 This project will only keep loans with Fully Paid and Charged Off status. And the purpose is to build a classifier to predict whether a loan will be charged off before issuing a loan. The final selected model is Logistic regression with Lasso penalty C=1 and cut-off threshold 0.3, the test performance are: F1:  68.17, Precision: 85.68, Recall: 56.60, AUC: 76.57, Accuracy: 85.84. According to feature importance based on scale of coefficients, people with high last_fico_range_high and annual_inc are more likely to fully pay their loans, applicants with debt_settlement_flag Y are more likely to charge off loans.
 
