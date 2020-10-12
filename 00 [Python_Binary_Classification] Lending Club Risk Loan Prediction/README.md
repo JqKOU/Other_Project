@@ -1,16 +1,16 @@
-## file name: 0 data preprocessing LendingClub.ipynb
+# ## file name: 0 data preprocessing LendingClub.ipynb
 
 ### Purpose¶
 Preparing lending club data for binary class classification
 
 ### Overview¶
-1. only keep rows with target classes ('Charged Off' and 'Fully Paid')
+1. only keep rows with target classes (‘Charged Off’ and ‘Fully Paid’)
 
 2. remove 
     
     * columns with unique value
     * columns contain more than 40% missing values
-    * columns which may cause informatoin leakage
+    * columns which may cause information leakage
     * columns provide redundant information
     * rows with too many missing values
     
@@ -22,13 +22,13 @@ Preparing lending club data for binary class classification
 
 5. data normalization
 
-6. train test spliting 
+6. train test splitting 
 
 ## file name: 1 Modeling on imbalanced dataset.ipynb
 ### Overview
-Lending Club loan dataset is an imbalanced dataset with good and bad loan ratio around 8:2. The purpose of this task is to distinguish bad loans from good loans. There are several approaches to deal with this imbalanced probelm:
+Lending Club loan dataset is an imbalanced dataset with good and bad loan ratio around 8:2. The purpose of this task is to distinguish bad loans from good loans. There are several approaches to deal with this imbalanced problem:
 
-    1. Change the evaluation metric from accuracy to F1 score, since F1 score is a balanced mesaure of precision and recall. 
+    1. Change the evaluation metric from accuracy to F1 score, since F1 score is a balanced measure of precision and recall. 
     2. Under, over or SMOTE sampling the training dataset to make classes balance, then train the model.
     3. Put more weight on the minority class.
 
@@ -40,3 +40,18 @@ Since imbalance ratio at 8:2 is not very severe, this notebook is modeled on the
     4. Threshold selection
 #### outcome 
 After all these steps, the final model is Logistic Regression with L1(Lasso) penalty C=1 and threshold 0.3. The best training performance are: F1: 69.04, Precision: 76.61, Recall: 62.83, AUC: 78.78, Accuracy: 87.84. The testing performance are: F1: 68.43, Precision: 75.75, Recall: 62.39, AUC: 78.46, Accuracy: 87.63. There is no big disparency between training and testing performance, which means overfitting is prohibited. 
+
+## file name: 2 Modeling on balanced dataset.ipynb
+
+### Overview
+Previous modeling on imbalanced dataset reached a highest performance on Logistic regression with Lasso penalty (C=1) and cut-off threshold 0.3. 
+
+ * The testing performance are: F1: 68.43, Precision: 75.75, Recall: 62.39, AUC: 78.46, Accuracy: 87.63. 
+
+This notebook focused on training model on under-sampled and SMOTE over-sampled dataset. When do model selection, all the candidate models on under-sampled dataset performed worse than on original dataset with f1 score around 0.55, all candidate models performed better on SMOTE over-sampled dataset with f1 score more than 0.7. Thus, further parameter tuning was performed on over-sampled dataset. To summarize, the best model was Logistic regression with Lasso Penalty (C=10) and cut-off threshold. 
+
+ * The new testing performance are: F1:  68.17, Precision: 85.68, Recall: 56.60, AUC: 76.57, Accuracy: 85.84.
+ 
+According to feature importance, people with high last_fico_range_high and annual_inc are less likely to default on loans, applicants with debt_settlement_flag Y are more likely to default on loans which is same to feature importance on imbalanced dataset. 
+
+All in all, models on balanced dataset performed similar to models on original dataset. Therefore, it is more efficient to model on the original imbalanced dataset for the Lending Club default loan prediction problem. 
