@@ -2,7 +2,7 @@
 
 This project used dataset obtained from Lending Club. Since loans in Lending Club are either 36 or 60 months, and in order to have a good number of finished loans, loan data issued from 2011 to 2014 were downloaded. More specifically, the target feature loan_status has the following distribution:
 
-Fully Paid 193878; Charged Off 41748; Current  1; Late (31-120 days) 1; Default 1
+* Fully Paid 193878; Charged Off 41748; Current  1; Late (31-120 days) 1; Default 1
 
 This project will only keep loans with Fully Paid and Charged Off status. And the purpose is to build a classifier based on f1 score to predict whether a loan will be charged off before issuing a loan. 
 
