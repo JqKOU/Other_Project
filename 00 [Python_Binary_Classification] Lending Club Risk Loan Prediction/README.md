@@ -43,11 +43,11 @@ Since imbalance ratio at 8:2 is not very severe, this notebook is modeled on the
     4. Threshold selection
     5. Feature importance
     
-After all these steps, the final model is 
+After all these steps, the final model's performance: 
 
-    *Logistic Regression with L1(Lasso) penalty C=1 and threshold 0.3. 
-    *The best training performance are: F1: 69.04, Precision: 76.61, Recall: 62.83, AUC: 78.78, Accuracy: 87.84. 
-    *The testing performance are: F1: 68.43, Precision: 75.75, Recall: 62.39, AUC: 78.46, Accuracy: 87.63. 
+    * Logistic Regression with L1(Lasso) penalty C=1 and threshold 0.3. 
+    * The best training performance are: F1: 69.04, Precision: 76.61, Recall: 62.83, AUC: 78.78, Accuracy: 87.84. 
+    * The testing performance are: F1: 68.43, Precision: 75.75, Recall: 62.39, AUC: 78.46, Accuracy: 87.63. 
     * last_fico_range_high and annual_inc have high negative influence on bad loans and debt_settlement_flag Y has high positive effect on bad loans. 
     
 There is no big disparency between training and testing performance, which means overfitting is prohibited. 
@@ -60,9 +60,13 @@ Previous modeling on imbalanced dataset reached a highest performance on Logisti
 
 This notebook focused on training model on under-sampled and SMOTE over-sampled dataset. When do model selection, all the candidate models on under-sampled dataset performed worse than on original dataset with f1 score around 0.55, all candidate models performed better on SMOTE over-sampled dataset with f1 score more than 0.7. Thus, further parameter tuning was performed on over-sampled dataset. To summarize, 
 
-    *the best training model was Logistic regression with Lasso Penalty (C=10) and cut-off threshold 0.5. 
+    * The best training model was Logistic regression with Lasso Penalty (C=10) and cut-off threshold 0.5. 
     * The new testing performance are: F1:  68.17, Precision: 85.68, Recall: 56.60, AUC: 76.57, Accuracy: 85.84.
  
 According to feature importance, people with high last_fico_range_high and annual_inc are less likely to charge off on loans, applicants with debt_settlement_flag Y are more likely to charge off on loans which is same to feature importance on imbalanced dataset. 
 
-All in all, models on balanced dataset performed similar to models on original dataset. Therefore, it is more efficient to model on the original imbalanced dataset for the Lending Club risk loan prediction problem. 
+      All in all, models on balanced dataset performed similar to models on original dataset. 
+      Therefore, it is more efficient to model on the original imbalanced dataset for the Lending Club risk loan prediction problem. 
+      
+ 🐣🪁
+      
